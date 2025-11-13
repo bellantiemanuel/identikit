@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Estudiantil</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">🎓 Mi Dashboard</h1>
+            <nav class="nav">
+                <a href="#tareas" class="nav-link active">Tareas</a>
+                <a href="#materias" class="nav-link">Materias</a>
+                <a href="#finanzas" class="nav-link">Finanzas</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Módulo de Tareas -->
+            <section id="tareas" class="module">
+                <div class="module-header">
+                    <h2>📝 Mis Tareas</h2>
+                    <button class="btn-primary" id="abrirModalTarea">
+                        + Nueva Tarea
+                    </button>
+                </div>
+                
+                <div class="tareas-lista" id="tareas-container">
+                    <!-- Las tareas se cargarán aquí dinámicamente -->
+                    <div class="tarea-vacia">
+                        <p>No hay tareas aún. ¡Agrega tu primera tarea!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Otros módulos (vacíos por ahora) -->
+            <section id="materias" class="module hidden">
+                <h2>📚 Mis Materias</h2>
+                <p>Módulo en construcción...</p>
+            </section>
+
+            <section id="finanzas" class="module hidden">
+                <h2>💰 Mis Finanzas</h2>
+                <p>Módulo en construcción...</p>
+            </section>
+        </div>
+    </main>
+
+    <!-- Modal para Agregar Tarea -->
+    <div id="modalTarea" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>➕ Nueva Tarea</h3>
+                <button class="cerrar-modal" id="cerrarModalTarea">&times;</button>
+            </div>
+            <form id="formTarea" class="modal-form">
+                <div class="form-group">
+                    <label for="tituloTarea">Título de la tarea:</label>
+                    <input 
+                        type="text" 
+                        id="tituloTarea" 
+                        placeholder="Ej: Estudiar para el parcial de matemáticas"
+                        required
+                    >
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" id="cancelarTarea">
+                        Cancelar
+                    </button>
+                    <button type="submit" class="btn-primary">
+                        Agregar Tarea
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
